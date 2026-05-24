@@ -2,8 +2,8 @@
 
 <br>
 <h1>
-  ### Technical Case Study
-**Autonomous Continuous Software Evolution & Sandboxed Security**
+  Technical Case Study
+Autonomous Continuous Software Evolution & Sandboxed Security
 
 </h1>
 
