@@ -1,9 +1,11 @@
 <div align="center">
 
 <br>
-
-### Technical Case Study
+<h1>
+  ### Technical Case Study
 **Autonomous Continuous Software Evolution & Sandboxed Security**
+
+</h1>
 
 <br>
 
