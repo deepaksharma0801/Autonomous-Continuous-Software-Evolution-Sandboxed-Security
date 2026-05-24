@@ -114,7 +114,7 @@ Aegis-Evo was designed under four strict constraints:
 
 ---
 
-## 🧱 Problem Statement: The Codebase-Scale Evolution Barrier
+##  Problem Statement: The Codebase-Scale Evolution Barrier
 
 Performance degrades significantly when transitioning from isolated single-file bug repairs to **continuous multi-file software evolution**. Two primary challenges drive this:
 
@@ -136,7 +136,7 @@ In large-scale codebases, import paths and system dependencies are highly interc
               ┌──────▼───────┐            │ transitive │
               │   Module C   │◄───────────┘  cascade   │
               └──────────────┴─────────────────────────┘
-                 ⚠️  A change here breaks everything above
+                   A change here breaks everything above
 ```
 
 **Why naive search fails:** Standard RAG / vector indexing doesn't capture these structural relations. The agent's planner makes incorrect assumptions, exhausts its context window, and fails the task.
@@ -265,7 +265,7 @@ Because `untrusted ≱ trusted`, the flow relation:
 
 ...is **mathematically invalid**. The middleware interceptor blocks any attempt to pass untrusted or tainted inputs directly into execution commands — *regardless of the planner's semantic state*.
 
-#### ⚠️ Real-World Implementation Caveats
+####  Real-World Implementation Caveats
 
 > [!CAUTION]
 > The prototype uses a simplified **metadata-based contamination tag** as an illustrative proxy.
@@ -442,7 +442,7 @@ class ProjectAegisEvaluator:
 
 ---
 
-## 📊 Pilot Evaluation & Results
+##  Pilot Evaluation & Results
 
 The prototype was evaluated under a **pilot feasibility benchmark** — 10 multi-file codebase evolution tasks applied to frozen versions of `pydantic` and `scikit-learn`.
 
@@ -505,13 +505,13 @@ The prototype was evaluated under a **pilot feasibility benchmark** — 10 multi
 
 Malicious payloads **successfully triggered terminal escapes**. The planning agent processed natural language instructions in code comments as valid control directives, executing arbitrary shell commands and compromising host environment variables.
 
-#### Configuration 2 — Sandbox Only (gVisor) ⚠️
+#### Configuration 2 — Sandbox Only (gVisor) 
 
 System call interception successfully isolated the host kernel. In-sandbox attempts to write to `/var/run/docker.sock` or mount host filesystems were intercepted by the **gVisor Sentry** and blocked.
 
 **However** — without FIDES taint-tracking, the prompt injection still **poisoned the agent's semantic state**. The agent entered failure loops, repeatedly generating malformed patches and failing to complete tasks, producing high token overhead.
 
-#### Configuration 3 — Project Aegis-Evo ✅
+#### Configuration 3 — Project Aegis-Evo 
 
 All 4 active exploits blocked under static policy enforcement — **zero escapes observed**.
 
@@ -519,7 +519,7 @@ Rather than relying on the sandbox as the primary defense line, **FIDES middlewa
 
 ---
 
-### ⚠️ Pilot Scope & Statistical Caveats
+###  Pilot Scope & Statistical Caveats
 
 > [!NOTE]
 > The small corpus size (10 tasks, 4 active injections) is a **preliminary feasibility pilot** — not an exhaustive security benchmark.
@@ -595,7 +595,7 @@ This structural awareness is essential for untangling dependency cycles and ensu
 
 ---
 
-## 📚 Project Engineering Resources
+##  Project Engineering Resources
 
 | Resource | Topic | Reference |
 |---|---|---|
